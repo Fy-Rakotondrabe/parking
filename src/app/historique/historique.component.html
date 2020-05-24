@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <span>Numero</span>
+        <span>Entrer</span>
+        <span>Sortie</span>
+    </div>
+    <div class="historique" *ngFor="let item of historiques">
+        <span>{{item.numero}}</span>
+        <span class="de">{{item.dateE.substring(0, 11)}}</span>
+        <ng-template [ngIf]="item.dateS !== null" [ngIfElse]="parked">
+            <span class="ds">{{item.dateS.substring(0, 11)}}</span>
+        </ng-template>
+        <ng-template #parked>
+            <span class="state">Parked</span>
+        </ng-template>
+    </div>
+</div>

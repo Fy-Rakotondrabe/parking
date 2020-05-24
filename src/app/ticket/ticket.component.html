@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="add-container">
+        <h2>Generate Ticket</h2>
+        <input type="text" #numero (focus)="error = ''" placeholder="Car matricule:">
+        <button class="get-ticket" (click)="add(numero.value); numero.value = ''" >Get Ticket</button>
+        <div class="alert" *ngIf="error" >
+            {{error}}
+        </div>
+    </div>
+    <hr>
+    <div *ngFor="let ticket of tickets" class="ticket-container">
+        <div class="ticket">
+            <h1 class="numero">{{ticket.numero}}</h1>
+            <span class="id">{{ticket.id}}</span> <br>
+        </div>
+        <div class="date">
+            <span>{{ticket.dateE.substring(0, 11)}}</span>
+            <button (click)="delete(ticket.id)" class="delete">x</button>
+        </div>
+    </div>
+    <div class="popup-container" *ngIf="montant">
+        <div class="popup">
+            <p class="title">Net a payer :</p>
+            <h2 class="montant">{{montant}} Ar</h2>
+            <button class="close" (click)="montant = 0" >Payé</button>
+        </div>
+    </div>
+</div>

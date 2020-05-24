@@ -1,0 +1,37 @@
+.container {
+    width: 60%;
+    margin: 10px auto;
+}
+
+.historique {
+    padding: 20px;
+    border-top: 1px solid #3f525c;
+    border-bottom: 1px solid #3f525c;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.historique:nth-child(even) {
+    background-color: #3f525c;
+    color: #FFFF;
+}
+
+.state {
+    color: rgb(82, 209, 65);
+}
+
+.ds {
+    color: rgb(212, 89, 89);
+}
+
+.de {
+    color: rgb(65, 111, 209);
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    width: 100%;
+}
